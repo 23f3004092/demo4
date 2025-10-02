@@ -20,4 +20,4 @@ jobs:
           key: cache-f5f3244
 
       - name: prime-cache-f5f3244
-        run: echo "Cache status: ${{ steps.cache.outputs.cache-hit }}"
+        run: echo "Cache status: haha"
