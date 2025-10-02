@@ -1,0 +1,23 @@
+name: Cache Demo
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip   # adjust for your language, here Python pip
+          key: cache-f5f3244
+
+      - name: prime-cache-f5f3244
+        run: echo "Cache status: ${{ steps.cache.outputs.cache-hit }}"
